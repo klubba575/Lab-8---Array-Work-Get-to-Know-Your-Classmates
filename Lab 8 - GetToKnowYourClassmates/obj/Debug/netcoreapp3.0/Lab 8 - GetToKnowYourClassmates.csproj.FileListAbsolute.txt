@@ -1,0 +1,11 @@
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\bin\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.exe
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\bin\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.deps.json
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\bin\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.runtimeconfig.json
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\bin\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.runtimeconfig.dev.json
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\bin\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.dll
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\bin\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.pdb
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\obj\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.csprojAssemblyReference.cache
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\obj\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.AssemblyInfoInputs.cache
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\obj\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.AssemblyInfo.cs
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\obj\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.dll
+C:\Users\Andy Wilder\Desktop\Grand Circus Detroit\Week2\Lab 8 - GetToKnowYourClassmates\Lab 8 - GetToKnowYourClassmates\obj\Debug\netcoreapp3.0\Lab 8 - GetToKnowYourClassmates.pdb
