@@ -1,30 +1,112 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Lab_8___GetToKnowYourClassmates
 {
 	class Program
 	{
+		
 		static void Main(string[] args)
 		{
-			string[] classmates = { "Andy", "Jack", "Jim", "Aaron", "Gomez" };
-			string[] hometowns = { "Grand Rapids", "Antarctica", "The Land Before Time", "The Land Down Under", "Miami: Vice City" };
-			string[] favoriteFoods = { "tacos", "icicles", "Plant Based Diet", "shrimp on the barbie", "cocaine" };
-			string[] favoriteBeer = { "Breakfast Stout", "Bud Ice", "Rainwater", "Fosters", "Corona" };
+			//These are the lists for my exercise
+			List<string> classmates = new List<string>();
+			classmates.Add("Andy");
+			classmates.Add("Nick");
+			classmates.Add("Freddie");
+			classmates.Add("Bob");
+			classmates.Add("Horatio");
 
-			//Looking for user input to select someone in our classmates array.
-			Console.WriteLine("Welcome to our C# class. Which student would you like to learn more about? (enter a number 1-5):");
+			List<string> homecities = new List<string>();
+			homecities.Add("Antarctica");
+			homecities.Add("The Land Before Time");
+			homecities.Add("The Land Down Under");
+			homecities.Add("Grand Rapids");
+			homecities.Add("Miami: Vice City");
 
-			int index = FindStudentValidationRange("Which student would you like to learn more about? (enter a number 1-5): ", 0, classmates.Length);
-			Console.WriteLine($"Student {index} is {classmates[index - 1]}");
+			List<string> favoriteFoods = new List<string>();
+			favoriteFoods.Add("Shrimp on the Barbie");
+			favoriteFoods.Add("Tacos");
+			favoriteFoods.Add("Icicles");
+			favoriteFoods.Add("Plant Based Diet");
+			favoriteFoods.Add("Cocaine");
+
+			List<string> favoriteBeer = new List<string>();
+			favoriteBeer.Add("Red Stripe");
+			favoriteBeer.Add("Breakfast Stout");
+			favoriteBeer.Add("Bud Ice");
+			favoriteBeer.Add("Fosters");
+			favoriteBeer.Add("Corona");
+
+
+			//Looking for user input to select someone in our classmates list.
+			//Bool to run the entire program in a do-while
+			bool studentselection = true;
+			bool characteristicselection = true;
+			//do while to run the entire program
 			do
 			{
+				//Intro Statemnt with a for loop to list all our student options
+				Console.WriteLine("Welcome to our C# class. Which student would you like to learn more about? (enter a number 1-5):");
+				for (int i = 0; i < classmates.Count; i++)
+				{
+					Console.WriteLine($"{i + 1}. {classmates[i]}");
+				}
+				//setting the index to the student chosen by running the ParseString inside of the FindStudentValidationRange methods
+				int index = FindStudentValidationRange("Which student would you like to learn more about? (enter a number 1-5): ", 0, classmates.Count);
+				//printing out the chosen classmate
+				Console.WriteLine($"Student {index} is {classmates[index - 1]}");
+				//running a second do-while loop for the portion of the code about the classmate charateristics or to add another classmate
+				do
+				{
+					//
+					int classmateOrAddAnotherStudent = FindNumberValidationRange($"Would you like to know about 1. {classmates[index - 1]} or 2. add another student? Please select 1 or 2.");
+					//if number is one, run the code below
+					//Issue - Would like to put this into a method, but the lists are lost in the method.
+					//If I put the Lists outside the main, the list.add dont seem to work.
+					string userSelection = GetUserInput("Please enter 1 for hometown, 2 for favorite food, or 3 for favorite beer? ");
+					switch (userSelection)
+					{
+						case "1":
+							userSelection = ($"{homecities[index - 1]} is the hometown of {classmates[index - 1]}");
+							break;
+						case "2":
+							userSelection = ($"{favoriteFoods[index - 1]} is the Favorite Food of {classmates[index - 1]}");
+							break;
+						case "3":
+							userSelection = ($"{favoriteBeer[index - 1]} is the Favorite Beer of {classmates[index - 1]}");
+							break;
+						default:
+							userSelection = GetUserInput(userSelection);
+							break;
+					}
+					Console.WriteLine(userSelection);
+					//Ask the User if they want to go again.
+					string repeat = GetUserInput($"Would you like to know something else about this classmate? (y/n)");
+					if (repeat == "y")
+					{
+						characteristicselection = true;
+					}
+					else
+					{
+						characteristicselection = false;
+					}
 
-				Console.WriteLine($"What would you like to know about {classmates[index - 1]}?");
+				} while (characteristicselection);
 
-				string userSelection = GetUserInput("Please enter 1 for hometown, 2 for favorite food, 3 for favorite beer, or 4 for favorite band? ");
-				string number = TryCatchValidationForSelection(userSelection);
-			} while(runAgain()
+				string secondRepeat = GetUserInput("Would you like to try a different classmate? (y/n)");
+				if (secondRepeat == "y")
+				{
+					studentselection = true;
+				}
+				else
+				{
+					studentselection = false;
+				}
+			}
+			while (studentselection);
+			Console.WriteLine("Ok, have a great day then!");
 		}
+
 		public static string GetUserInput(string message)
 		{
 			Console.WriteLine(message);
@@ -56,38 +138,58 @@ namespace Lab_8___GetToKnowYourClassmates
 			}
 
 		}
-		public static string TryCatchValidationForSelection(string input)
+		public static int FindNumberValidationRange(string input, int number)
 		{
-			try  //if
+			int numberSelectionForStudentOrList = ParseString(input);
+			if (number == 1)
 			{
-				int input1 = int.Parse(Console.ReadLine());
-				string number = ($"Number {input1}");
-				return number;
+				//run code above
 			}
-			catch (FormatException)  //else if
+			else
 			{
-				string badInput = "Bad Input, we need a number for the selection.";
-				return badInput;
+				AddToList();
+				break;
 			}
-			catch (OverflowException) //else if
-			{
-				string overflowinput = "That number is too big";
-				return overflowinput;
-			}
-			catch //else
-			{
-				throw new Exception("Something went wrong");
+
+		}
+		//method to add a new classmate to the List classmates, would imagine you run multiple overloads to add to different lists
+		public static void AddToList(List<string> classmates, string person)
+		{
+			Console.WriteLine("What is the new of the classmate you want to add?");
+			string newClassmate = Console.ReadLine();
+			classmates.Add(newClassmate);
+		}
+		//Method for try catch validation that I could not figure out how to work
+		//public static string TryCatchValidationForSelection(string input)
+		//{
+		//	try  //if
+		//	{
+		//		int input1 = int.Parse(Console.ReadLine());
+		//		string number = ($"Number {input1}");
+		//		return number;
+		//	}
+		//	catch (FormatException)  //else if
+		//	{
+		//		string badInput = "Bad Input, we need a number for the selection.";
+		//		return badInput;
+		//	}
+		//	catch (OverflowException) //else if
+		//	{
+		//		string overflowinput = "That number is too big";
+		//		return overflowinput;
+		//	}
+		//	catch //else
+		//	{
+		//		throw new Exception("Something went wrong");
 			}
 		}
-		public static string runAgain(string input)
-			{
-				while (input == "y")
-				{
-				string startAgain = GetUserInput("Would you like to know something else about your classmate?");
-				return startAgain;
-				}
-			} return "Ok, have a great day!"
-
-		
 	}
 }
+//foreach (string word in (hometowns))
+//{
+//	homecities.Add(word);
+//	for (int i = 0; i < homecities.Count; i++)
+//	{
+//		Console.WriteLine(homecities);
+//	}
+//}
